@@ -1,0 +1,49 @@
+body {
+  background-color: #d8e2dc;
+  font-family:'Times New Roman', Times, serif ;
+}
+button {
+  font-size: 30px;
+  background-color: #f4acb7;
+}
+h1,h2 {
+  color: white;
+}
+#signup {
+  background-color: beige;
+  color: black;
+}
+span {
+  color: #333d29;
+}
+.tag {
+  background-color: red;
+  color: black;
+  font-size: 10px;
+}
+a{
+  color: #ababab;
+}
+span a {
+  color: rebeccapurple;
+}
+input + button {
+  color: #d8a8b9;
+  background-color: magenta;
+}
+footer > a {
+  font-size: 30px;
+  color: blue;
+}
+input {
+  color: gold;
+}
+input[type="password"] {
+  color: green;
+}
+section[class="post"] {
+  background-color: chocolate;
+}
+h2::first-letter {
+  font-size: 30px;
+}

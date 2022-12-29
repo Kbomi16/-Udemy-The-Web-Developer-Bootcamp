@@ -1,0 +1,10 @@
+h1 {
+  text-align: center;
+  font-weight: 400;
+  text-decoration: blue underline overline wavy;
+  letter-spacing: 100px;
+}
+p {
+  text-align: right;
+  line-height: 2.5;
+}
