@@ -30,3 +30,30 @@ let newLength = fruits.unshift('딸기') // 앞에 추가
 // ["딸기", "바나나"]
 
 ```
+✔️ 인덱스 위치에 있는 항목 제거하기
+```js
+let removedItem = fruits.splice(pos, 1) // 항목을 제거하는 방법
+// ["딸기", "바나나", "망고"] 에서
+// ["딸기", "망고"] 로 바뀜
+
+```
+✔️ 인덱스 위치에서부터 여러개의 항목 제거하기
+```js
+let vegetables = ['양배추', '순무', '무', '당근']
+console.log(vegetables)
+// ["양배추", "순무", "무", "당근"]
+
+let pos = 1
+let n = 2
+
+let removedItems = vegetables.splice(pos, n)
+// 배열에서 항목을 제거하는 방법
+// pos 인덱스부터 n개의 항목을 제거함
+
+console.log(vegetables)
+// ["양배추", "당근"] (원 배열 vegetables의 값이 변함)
+
+console.log(removedItems)
+// ["순무", "무"]
+
+```
