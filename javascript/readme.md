@@ -55,8 +55,7 @@ console.log(removedItems)
 ```
 
 ### #함수
-✔️ForEach
-배열에서 요소당 한 번 함수를 호출함.
+✔️ForEach : 배열에서 요소당 한 번 함수를 호출함.
 ```js
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
 
@@ -66,8 +65,7 @@ numbers.forEach(function (el) {
     }
 })
 ```
-✔️Map
-배열의 모든 요소에 대해 콜백을 호출한 결과로 새 배열을 만듦.
+✔️Map : 배열의 모든 요소에 대해 콜백을 호출한 결과로 새 배열을 만듦.
 ```js
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
 
@@ -75,6 +73,91 @@ const doubles = numbers.map(function (num) {
     return num * 2;
 })
 ```
+✔️화살표 함수
+```js
+const add = (a, b) => a + b;
 
 
+const square = num => {
+    return num * num;
+}
+```
+✔️Filter : 주어진 조건을 만족하는 모든 요소가 포함된 새 배열을 만듦.
+```js
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
 
+numbers.filter(n => {
+    return n < 10
+})
+```
+✔️Every : 배열의 모든 요소가 조건에 맞는지 테스트함(모두 참일시 참 반환)
+✔️Some : 배열 중 요소가 하나라도 참이면 참
+```js
+const exams = [80, 98, 92, 78, 77, 90, 89, 84, 81, 77]
+
+exams.every(score => score >= 75)
+
+const movies = [
+    {
+        title: 'Amadeus',
+        score: 99,
+        year: 1984
+    },
+    {
+        title: 'Sharknado',
+        score: 35,
+        year: 2013
+    },
+    {
+        title: '13 Going On 30',
+        score: 70,
+        year: 2004
+    },
+    {
+        title: 'Stand By Me',
+        score: 85,
+        year: 1986
+    },
+    {
+        title: 'Waterworld',
+        score: 62,
+        year: 1995
+    },
+    {
+        title: 'Jingle All The Way',
+        score: 71,
+        year: 1996
+    },
+    {
+        title: 'Parasite',
+        score: 95,
+        year: 2010
+    },
+    {
+        title: 'Notting Hill',
+        score: 77,
+        year: 1999
+    },
+    {
+        title: 'Alien',
+        score: 90,
+        year: 1979
+    }
+]
+
+
+movies.some(movie => movie.year > 2015)
+```
+✔️Reduce : 감속기<br>
+![image](https://user-images.githubusercontent.com/88658551/212842454-cf5fdf4e-f8ce-48a3-ad8d-9293eb272723.png)
+```js
+//배열 중에서 최소값 찾기
+const prices = [9.99, 1.50, 19.99, 49.99, 30.50];
+
+const minPrice = prices.reduce((min, price) => {
+    if (price < min) {
+        return price;
+    }
+    return min;
+})
+```
