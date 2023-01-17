@@ -53,3 +53,28 @@ console.log(removedItems)
 // ["순무", "무"]
 
 ```
+
+### #함수
+✔️ForEach
+배열에서 요소당 한 번 함수를 호출함.
+```js
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+
+numbers.forEach(function (el) {
+    if (el % 2 === 0) {
+        console.log(el)
+    }
+})
+```
+✔️Map
+배열의 모든 요소에 대해 콜백을 호출한 결과로 새 배열을 만듦.
+```js
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+
+const doubles = numbers.map(function (num) {
+    return num * 2;
+})
+```
+
+
+
