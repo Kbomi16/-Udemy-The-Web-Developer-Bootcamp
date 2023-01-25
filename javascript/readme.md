@@ -161,3 +161,10 @@ const minPrice = prices.reduce((min, price) => {
     return min;
 })
 ```
+
+### #DOM
+✔️setAttribute<br>
+(key, value) 를 통해 html 태그에 해당 key로 셋팅해서 value값을 넣어준다.
+
+✔️getAttribute(key)<br>
+key에 해당하는 값을 가져온다.
