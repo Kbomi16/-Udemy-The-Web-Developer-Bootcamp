@@ -169,7 +169,7 @@ const minPrice = prices.reduce((min, price) => {
 ✔️getAttribute(key)<br>
 key에 해당하는 값을 가져온다.
 
-##❗append VS appendChild 차이
+## ❗append VS appendChild 차이
 appendChild는 DOM 함수 / append는 JavaScript 함수<br><br>
 
 append() 함수를 더 선호한다. append를 할 때 ❗문자열❗을 삽입할 수 있다.<br>
