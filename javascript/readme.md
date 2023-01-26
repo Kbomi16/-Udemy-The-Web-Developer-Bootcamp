@@ -177,10 +177,11 @@ appendChild 함수에는 parameter(매개변수)와 같은 ❗element(요소)❗
 ```js
 const container = document.querySelector('#container');
 
-for(i=0; i<100; i++) {
+for(let i=0; i<=100; i++) {
+  //appendChild를 쓰려면 요소를 만들어야 함.
   const newBtn = document.createElement('button');
-  //appendChild를 쓰려면 요소가 필요하다.
   newBtn.innerHTML = "Hey!";
   container.appendChild(newBtn);
 }
+
 ```
