@@ -1,6 +1,6 @@
 ❓const를 쓰는 이유<br>
 변하지 않는 것의 확실한 값을 유지하기 위해 사용
-
+<hr>
 ### #배열
 ✔️ 배열 끝에 항목 추가하기
 ```js
@@ -53,7 +53,7 @@ console.log(removedItems)
 // ["순무", "무"]
 
 ```
-
+<hr>
 ### #함수
 ✔️ForEach : 배열에서 요소당 한 번 함수를 호출함.
 ```js
@@ -161,7 +161,7 @@ const minPrice = prices.reduce((min, price) => {
     return min;
 })
 ```
-
+<hr>
 ### #DOM
 ✔️setAttribute<br>
 (key, value) 를 통해 html 태그에 해당 key로 셋팅해서 value값을 넣어준다.
@@ -170,7 +170,7 @@ const minPrice = prices.reduce((min, price) => {
 key에 해당하는 값을 가져온다.
 
 ## ❗append VS appendChild 차이
-appendChild는 DOM 함수 / append는 JavaScript 함수<br><br>
+appendChild는 DOM 함수 / append는 JavaScript 함수<br>
 
 append() 함수를 더 선호한다. append를 할 때 ❗문자열❗을 삽입할 수 있다.<br>
 appendChild 함수에는 parameter(매개변수)와 같은 ❗element(요소)❗가 필요하다.<br>
