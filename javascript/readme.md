@@ -168,3 +168,19 @@ const minPrice = prices.reduce((min, price) => {
 
 ✔️getAttribute(key)<br>
 key에 해당하는 값을 가져온다.
+
+##❗append VS appendChild 차이
+appendChild는 DOM 함수 / append는 JavaScript 함수<br><br>
+
+append() 함수를 더 선호한다. append를 할 때 ❗문자열❗을 삽입할 수 있다.<br>
+appendChild 함수에는 parameter(매개변수)와 같은 ❗element(요소)❗가 필요하다.<br>
+```js
+const container = document.querySelector('#container');
+
+for(i=0; i<100; i++) {
+  const newBtn = document.createElement('button');
+  //appendChild를 쓰려면 요소가 필요하다.
+  newBtn.innerHTML = "Hey!";
+  container.appendChild(newBtn);
+}
+```
