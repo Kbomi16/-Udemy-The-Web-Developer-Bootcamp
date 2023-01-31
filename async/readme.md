@@ -33,9 +33,9 @@ console.log("DONEEEE!")
 http://latentflip.com/loupe/?code=Y29uc29sZS5sb2coIlNlbmRpbmcgcmVxdWVzdCB0byBzZXJ2ZXIhIikKc2V0VGltZW91dChmdW5jdGlvbigpIHsKICAgIGNvbnNvbGUubG9nKCJIZXJlIGlzIHlvdXIgZGF0YSBmcm9tIHRoZSBzZXJ2ZXIuLi4iKQp9LCAzMDAwKQpjb25zb2xlLmxvZygiSSBBTSBBVCBUSEUgRU5EIE9GIFRIRSBGSUxFISIp
 
 ```js
-console.log("Sending request to server!")
+console.log("Sending request to server!")  //1
 setTimeout(() => {
-    console.log("Here is your data from the server...")
+    console.log("Here is your data from the server...") //3
 }, 3000)
-console.log("I AM AT THE END OF THE FILE!")
+console.log("I AM AT THE END OF THE FILE!") //2
 ```
