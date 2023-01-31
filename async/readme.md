@@ -77,11 +77,86 @@ delayedColorChange('red', 1000, () => {
     })
 });
 ```
-
+<b>callbackhell</b>
+```js
+fakeRequestCallback('books.com/page1',
+    function (response) {
+        console.log("IT WORKED!!!!")
+        console.log(response)
+        fakeRequestCallback('books.com/page2',
+            function (response) {
+                console.log("IT WORKED AGAIN!!!!")
+                console.log(response)
+                fakeRequestCallback('books.com/page3',
+                    function (response) {
+                        console.log("IT WORKED AGAIN (3rd req)!!!!")
+                        console.log(response)
+                    },
+                    function (err) {
+                        console.log("ERROR (3rd req)!!!", err)
+                    })
+            },
+            function (err) {
+                console.log("ERROR (2nd req)!!!", err)
+            })
+    }, function (err) {
+        console.log("ERROR!!!", err)
+    })
+```
+위의 복잡한 콜백 코드를 보완하는 것이 promise
+```js
+//콜백 버전
+const fakeRequestCallback = (url, success, failure) => {
+    const delay = Math.floor(Math.random() * 4500) + 500;
+    setTimeout(() => {
+        if (delay > 4000) {
+            failure('Connection Timeout :(')
+        } else {
+            success(`Here is your fake data from ${url}`)
+        }
+    }, delay)
+}
+//PROMISE 버전
+const fakeRequestPromise = (url) => {
+    return new Promise((resolve, reject) => {
+        const delay = Math.floor(Math.random() * (4500)) + 500;
+        setTimeout(() => {
+            if (delay > 4000) {
+                reject('Connection Timeout :(')
+            } else {
+                resolve(`Here is your fake data from ${url}`)
+            }
+        }, delay)
+    })
+}
+```
 # #PROMISE
 어떤 연산, 비동기 연산이 최종적으로 완료 혹인 성공했는지 실패했는지 알려주는 객체
+- pending : 무언가를 기다리는 상태. Promise는 이 비동기적 값이 최종적으로 resolved 일지 rejected 일지 알려줌.
+- resolved : 성공
+- rejected : 실패
 
-
+```js
+fakeRequestPromise('yelp.com/api/coffee/page1')
+    .then((data) => {
+        console.log("IT WORKED!!!!!! (page1)")
+        console.log(data)
+        return fakeRequestPromise('yelp.com/api/coffee/page2')
+    })
+    .then((data) => {
+        console.log("IT WORKED!!!!!! (page2)")
+        console.log(data)
+        return fakeRequestPromise('yelp.com/api/coffee/page3')
+    })
+    .then((data) => {
+        console.log("IT WORKED!!!!!! (page3)")
+        console.log(data)
+    })
+    .catch((err) => {
+        console.log("OH NO, A REQUEST FAILED!!!")
+        console.log(err)
+    })
+```
 
 
 
